@@ -1,0 +1,50 @@
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Build outputs
+# =========================
+bin/
+obj/
+**/bin/
+**/obj/
+
+# =========================
+# .NET / EF Core
+# =========================
+*.dll
+*.exe
+*.pdb
+*.cache
+*.deps.json
+*.runtimeconfig.json
+*.AssemblyInfo.cs
+*.AssemblyAttributes.cs
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+project.assets.json
+project.nuget.cache
+.nuget/
+
+# =========================
+# SQLite
+# =========================
+*.db
+*.db-shm
+*.db-wal
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
