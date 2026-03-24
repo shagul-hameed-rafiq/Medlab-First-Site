@@ -19,3 +19,14 @@ services:
           property: connectionString
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
+
+  - type: static
+    name: medlab-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist/medlab-ainsights/browser
+    rootDir: ./frontend
+    pullRequestPreviewsEnabled: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
