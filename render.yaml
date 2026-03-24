@@ -1,0 +1,21 @@
+databases:
+  - name: medlab-db
+    plan: free
+    databaseName: medlab
+
+services:
+  - type: web
+    name: medlab-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /
+    autoDeployTrigger: commit
+    envVars:
+      - key: ConnectionStrings__Default
+        fromDatabase:
+          name: medlab-db
+          property: connectionString
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production

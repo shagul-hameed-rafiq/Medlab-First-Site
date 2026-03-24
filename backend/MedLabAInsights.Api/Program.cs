@@ -33,9 +33,11 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseHttpsRedirection();
+app.MapGet("/", () => Results.Ok(new { status = "ok" }));
 app.MapControllers();
 
 // ✅ CRITICAL for Render
-app.Urls.Add("http://0.0.0.0:8080");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}");
 
 app.Run();
