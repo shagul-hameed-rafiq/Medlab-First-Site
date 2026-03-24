@@ -1,0 +1,93 @@
+<div class="test-entry-container">
+  <!-- Stepper (Read-Only) -->
+  <header class="wizard-header">
+    <div class="stepper">
+      <div class="step completed">
+        <span class="step-num">1</span>
+        <span class="step-label">Vitals</span>
+      </div>
+      <div class="step-line active"></div>
+      <div class="step completed">
+        <span class="step-num">2</span>
+        <span class="step-label">Panel</span>
+      </div>
+      <div class="step-line active"></div>
+      <div class="step active">
+        <span class="step-num">3</span>
+        <span class="step-label">Results</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-content">
+    <div class="intro">
+      <h2>Enter Laboratory Results</h2>
+      <p>Input the exact values returned from the clinical laboratory for each test.</p>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Synchronizing tests...</p>
+    </div>
+
+    <!-- Test Input Form -->
+    <div *ngIf="!loading && tests.length > 0" class="test-form">
+      <div class="form-card">
+        <div class="card-header">
+          <h3>Test Items <span>({{ tests.length }})</span></h3>
+        </div>
+
+        <div class="test-list">
+          <div *ngFor="let test of tests; trackBy: trackById" class="test-item">
+            <div class="test-info">
+              <span class="name">{{ test.testName }}</span>
+              <span class="unit">{{ test.unit }}</span>
+            </div>
+            <div class="input-wrapper">
+              <input type="number" [(ngModel)]="test.value" placeholder="0.00" class="value-input" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplemental Tests Section -->
+        <div class="supplemental-section">
+          <label>Add Supplemental Tests</label>
+          <div class="supplemental-controls">
+            <select [(ngModel)]="selectedExtraTestId" class="extra-test-select">
+              <option [ngValue]="null" disabled>Search or select extra parameters...</option>
+              <option *ngFor="let t of allAvailableTests" [value]="t.testId">
+                {{ t.testName }} ({{ t.unit }})
+              </option>
+            </select>
+            <button (click)="addSupplementalTest()" [disabled]="!selectedExtraTestId" class="btn-add-extra">
+              <span>+ Add</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <!-- Error Message -->
+          <div *ngIf="errorMsg" class="error-banner">
+            <span class="icon">⚠️</span> {{ errorMsg }}
+          </div>
+
+          <div class="actions">
+            <button (click)="goBack()" class="btn-back">
+              <span>⬅ Back</span>
+            </button>
+
+            <button (click)="generateReport()" [disabled]="generatingReport" class="btn-generate">
+              <span *ngIf="!generatingReport">🔬 Generate Report</span>
+              <span *ngIf="generatingReport">⏳ Processing...</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && tests.length === 0" class="empty-state">
+      <p>No tests found for this panel.</p>
+    </div>
+  </div>
+</div>

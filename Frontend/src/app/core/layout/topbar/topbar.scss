@@ -1,0 +1,17 @@
+.topbar-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #374151;
+}
+
+.user {
+  font-size: 14px;
+  font-weight: 500;
+}

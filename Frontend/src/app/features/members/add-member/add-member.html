@@ -1,0 +1,119 @@
+<div class="page-container">
+
+  <!-- Breadcrumb and Action -->
+  <header class="page-header">
+    <nav class="breadcrumb">
+      <span class="crumb" (click)="cancel()">Members</span>
+      <span class="separator">/</span>
+      <span class="active">{{ isEdit ? 'Edit Profile' : 'New Member' }}</span>
+    </nav>
+  </header>
+
+  <main class="form-main">
+    <div class="form-card shadow-lg">
+      <div class="card-header">
+        <div class="header-icon">
+          <svg *ngIf="!isEdit" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="17" y1="11" x2="23" y2="11"></line>
+          </svg>
+          <svg *ngIf="isEdit" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+          </svg>
+        </div>
+        <div class="header-text">
+          <h3>{{ isEdit ? 'Update Member Profile' : 'Register New Member' }}</h3>
+          <p>{{ isEdit ? 'Modify the patient details below' : 'Enter basic information to register a new member' }}</p>
+        </div>
+      </div>
+
+      <form (ngSubmit)="saveMember()" #memberForm="ngForm" class="member-form">
+        <div class="form-grid">
+          <!-- Name -->
+          <div class="form-group full">
+            <label>FULL NAME</label>
+            <div class="input-wrapper">
+              <input type="text" name="name" [(ngModel)]="member.name" required placeholder="e.g. Shagul Hameed" />
+            </div>
+          </div>
+
+          <!-- Gender & DOB -->
+          <div class="form-group">
+            <label>GENDER</label>
+            <div class="input-wrapper">
+              <select name="gender" [(ngModel)]="member.gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>DATE OF BIRTH</label>
+            <div class="input-wrapper">
+              <input type="date" name="dateOfBirth" [(ngModel)]="member.dateOfBirth" required [max]="'2026-12-31'" />
+            </div>
+          </div>
+
+          <!-- Blood Group & Contact -->
+          <div class="form-group">
+            <label>BLOOD GROUP</label>
+            <div class="input-wrapper">
+              <select name="bloodGroup" [(ngModel)]="member.bloodGroup" required>
+                <option [ngValue]="0">A Positive (A+)</option>
+                <option [ngValue]="1">A Negative (A-)</option>
+                <option [ngValue]="2">B Positive (B+)</option>
+                <option [ngValue]="3">B Negative (B-)</option>
+                <option [ngValue]="4">AB Positive (AB+)</option>
+                <option [ngValue]="5">AB Negative (AB-)</option>
+                <option [ngValue]="6">O Positive (O+)</option>
+                <option [ngValue]="7">O Negative (O-)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>CONTACT NUMBER</label>
+            <div class="input-wrapper">
+              <input type="tel" name="contact" [(ngModel)]="member.contact" required placeholder="e.g. 7094565656" />
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="form-group full">
+            <label>PERMANENT ADDRESS</label>
+            <div class="input-wrapper">
+              <textarea name="address" [(ngModel)]="member.address" required
+                placeholder="Enter full residential address..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="saving || !memberForm.valid">
+            <span *ngIf="!saving">{{ isEdit ? 'Update Profile' : 'Register Member' }}</span>
+            <span *ngIf="saving" class="btn-loader"></span>
+            <span *ngIf="saving">Saving...</span>
+          </button>
+        </div>
+
+        <p class="error-msg" *ngIf="errorMessage">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          {{ errorMessage }}
+        </p>
+      </form>
+    </div>
+  </main>
+</div>

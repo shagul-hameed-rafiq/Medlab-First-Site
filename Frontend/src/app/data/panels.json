@@ -1,0 +1,5 @@
+[
+  { "panelId": 1, "panelName": "Diabetic" },
+  { "panelId": 2, "panelName": "Thyroid" },
+  { "panelId": 3, "panelName": "CBC Panel" }
+]

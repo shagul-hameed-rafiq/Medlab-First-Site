@@ -1,0 +1,753 @@
+[
+  {
+    "testId": 1,
+    "minRange": 0,
+    "maxRange": 5,
+    "severity": 0,
+    "interpretation": "Your sugar over the past 2–3 months is in a very healthy range — keep your current diet and routine to maintain this."
+  },
+  {
+    "testId": 1,
+    "minRange": 5.1,
+    "maxRange": 5.4,
+    "severity": 1,
+    "interpretation": "Your long-term blood sugar is normal — good control; continue healthy eating, activity, and regular checkups."
+  },
+  {
+    "testId": 1,
+    "minRange": 5.5,
+    "maxRange": 5.6,
+    "severity": 2,
+    "interpretation": "Your HbA1c is at the upper end of normal — monitor regularly and maintain healthy habits to prevent progression."
+  },
+  {
+    "testId": 1,
+    "minRange": 5.7,
+    "maxRange": 5.9,
+    "severity": 3,
+    "interpretation": "This range shows early signs of pre-diabetes — small lifestyle changes now can help reverse it."
+  },
+  {
+    "testId": 1,
+    "minRange": 6,
+    "maxRange": 6.4,
+    "severity": 4,
+    "interpretation": "Your HbA1c indicates established pre-diabetes — stronger lifestyle changes and regular monitoring are recommended."
+  },
+  {
+    "testId": 1,
+    "minRange": 6.5,
+    "maxRange": 6.9,
+    "severity": 5,
+    "interpretation": "This HbA1c meets the diagnostic cutoff for diabetes — please discuss confirmation and next steps with your doctor."
+  },
+  {
+    "testId": 1,
+    "minRange": 7,
+    "maxRange": 7.9,
+    "severity": 6,
+    "interpretation": "Your HbA1c suggests moderate diabetes — review medications and lifestyle to prevent complications."
+  },
+  {
+    "testId": 1,
+    "minRange": 8,
+    "maxRange": 8.9,
+    "severity": 7,
+    "interpretation": "Your HbA1c indicates poor diabetic control — sugar levels need adjustment to avoid long-term risks."
+  },
+  {
+    "testId": 1,
+    "minRange": 9,
+    "maxRange": 11.9,
+    "severity": 8,
+    "interpretation": "Your long-term sugar level is very high — this increases risk of nerve, kidney, eye and heart issues; medical review needed."
+  },
+  {
+    "testId": 1,
+    "minRange": 12,
+    "maxRange": 100,
+    "severity": 9,
+    "interpretation": "Extremely high HbA1c — your risk of severe complications is very high; urgent medical care is required."
+  },
+
+  {
+    "testId": 2,
+    "minRange": 0,
+    "maxRange": 54,
+    "severity": 0,
+    "interpretation": "Your fasting sugar is dangerously low — this can cause fainting or confusion; take fast sugar and get urgent medical help."
+  },
+  {
+    "testId": 2,
+    "minRange": 55,
+    "maxRange": 69,
+    "severity": 1,
+    "interpretation": "Your fasting sugar is low — monitor symptoms, adjust food/medication timing and review with your doctor if recurrent."
+  },
+  {
+    "testId": 2,
+    "minRange": 70,
+    "maxRange": 85,
+    "severity": 2,
+    "interpretation": "Your fasting sugar is excellent — shows healthy overnight glucose control; keep maintaining your habits."
+  },
+  {
+    "testId": 2,
+    "minRange": 86,
+    "maxRange": 99,
+    "severity": 3,
+    "interpretation": "Your fasting sugar is normal — good glucose regulation; continue your routine and regular monitoring."
+  },
+  {
+    "testId": 2,
+    "minRange": 100,
+    "maxRange": 109,
+    "severity": 4,
+    "interpretation": "Your fasting sugar is slightly high — monitor diet/activity and recheck to prevent further rise."
+  },
+  {
+    "testId": 2,
+    "minRange": 110,
+    "maxRange": 119,
+    "severity": 5,
+    "interpretation": "Early fasting pre-diabetes — your body is beginning to struggle with sugar control; lifestyle action now helps."
+  },
+  {
+    "testId": 2,
+    "minRange": 120,
+    "maxRange": 125,
+    "severity": 6,
+    "interpretation": "Established fasting pre-diabetes — consistent elevation; diet, exercise and monitoring strongly recommended."
+  },
+  {
+    "testId": 2,
+    "minRange": 126,
+    "maxRange": 139,
+    "severity": 7,
+    "interpretation": "Fasting sugar meets diabetes criteria — follow up with your doctor for diagnosis and management."
+  },
+  {
+    "testId": 2,
+    "minRange": 140,
+    "maxRange": 159,
+    "severity": 8,
+    "interpretation": "Moderately elevated fasting sugar — poor control; medical and lifestyle adjustments are recommended."
+  },
+  {
+    "testId": 2,
+    "minRange": 160,
+    "maxRange": 500,
+    "severity": 9,
+    "interpretation": "Severely elevated fasting sugar — high risk of long-term complications; seek medical care soon."
+  },
+
+  {
+    "testId": 3,
+    "minRange": 0,
+    "maxRange": 54,
+    "severity": 0,
+    "interpretation": "Your post-meal sugar is dangerously low — take fast sugar and seek urgent medical evaluation."
+  },
+  {
+    "testId": 3,
+    "minRange": 55,
+    "maxRange": 69,
+    "severity": 1,
+    "interpretation": "Your post-meal sugar is low — may be from delayed meals/medication imbalance; monitor closely."
+  },
+  {
+    "testId": 3,
+    "minRange": 70,
+    "maxRange": 119,
+    "severity": 2,
+    "interpretation": "Your post-meal sugar is optimal — strong metabolic control; maintain your habits."
+  },
+  {
+    "testId": 3,
+    "minRange": 120,
+    "maxRange": 139,
+    "severity": 3,
+    "interpretation": "Your post-meal sugar is normal — good glucose handling after meals."
+  },
+  {
+    "testId": 3,
+    "minRange": 140,
+    "maxRange": 159,
+    "severity": 4,
+    "interpretation": "Your post-meal sugar is slightly high — early warning sign; adjust food portions and meal habits."
+  },
+  {
+    "testId": 3,
+    "minRange": 160,
+    "maxRange": 169,
+    "severity": 5,
+    "interpretation": "Early post-meal pre-diabetes — some difficulty controlling sugar after meals; improve diet/lifestyle."
+  },
+  {
+    "testId": 3,
+    "minRange": 170,
+    "maxRange": 199,
+    "severity": 6,
+    "interpretation": "Established post-meal pre-diabetes — sugar stays high after eating; lifestyle corrections needed."
+  },
+  {
+    "testId": 3,
+    "minRange": 200,
+    "maxRange": 239,
+    "severity": 7,
+    "interpretation": "Your post-meal sugar meets diabetes criteria — please consult your doctor."
+  },
+  {
+    "testId": 3,
+    "minRange": 240,
+    "maxRange": 299,
+    "severity": 8,
+    "interpretation": "Moderately elevated post-meal sugar — poor control; treatment and lifestyle changes advised."
+  },
+  {
+    "testId": 3,
+    "minRange": 300,
+    "maxRange": 600,
+    "severity": 9,
+    "interpretation": "Severely elevated post-meal sugar — significantly increases complication risk; immediate care advised."
+  },
+
+  {
+    "testId": 4,
+    "minRange": 0,
+    "maxRange": 54,
+    "severity": 0,
+    "interpretation": "Your average glucose is dangerously low — indicates frequent lows; urgent medical evaluation required."
+  },
+  {
+    "testId": 4,
+    "minRange": 55,
+    "maxRange": 69,
+    "severity": 1,
+    "interpretation": "Your average glucose is low — repeated mild lows possible; review medication/meal habits."
+  },
+  {
+    "testId": 4,
+    "minRange": 70,
+    "maxRange": 99,
+    "severity": 2,
+    "interpretation": "Your average glucose is optimal — excellent overall sugar control."
+  },
+  {
+    "testId": 4,
+    "minRange": 100,
+    "maxRange": 126,
+    "severity": 3,
+    "interpretation": "Your average glucose is normal — healthy metabolic balance."
+  },
+  {
+    "testId": 4,
+    "minRange": 127,
+    "maxRange": 139,
+    "severity": 4,
+    "interpretation": "Your average glucose is slightly high — early sign of impaired glucose control; lifestyle changes help."
+  },
+  {
+    "testId": 4,
+    "minRange": 140,
+    "maxRange": 154,
+    "severity": 5,
+    "interpretation": "Early pre-diabetic average glucose — insulin resistance may be starting; take preventive action."
+  },
+  {
+    "testId": 4,
+    "minRange": 155,
+    "maxRange": 183,
+    "severity": 6,
+    "interpretation": "Established pre-diabetic average glucose — consistent elevation; lifestyle correction required."
+  },
+  {
+    "testId": 4,
+    "minRange": 184,
+    "maxRange": 199,
+    "severity": 7,
+    "interpretation": "Your average glucose crosses diabetes cutoff — consult your doctor."
+  },
+  {
+    "testId": 4,
+    "minRange": 200,
+    "maxRange": 249,
+    "severity": 8,
+    "interpretation": "Poor average glucose control — sustained high levels raise complication risk; treatment review needed."
+  },
+  {
+    "testId": 4,
+    "minRange": 250,
+    "maxRange": 500,
+    "severity": 9,
+    "interpretation": "Severely elevated average glucose — uncontrolled diabetes; urgent medical care required."
+  },
+
+  {
+    "testId": 5,
+    "minRange": 0,
+    "maxRange": 0.09,
+    "severity": 0,
+    "interpretation": "TSH extremely low — strong hyperthyroid activity; urgent assessment recommended."
+  },
+  {
+    "testId": 5,
+    "minRange": 0.1,
+    "maxRange": 0.39,
+    "severity": 1,
+    "interpretation": "TSH low — possible hyperthyroidism; review symptoms with your doctor."
+  },
+  {
+    "testId": 5,
+    "minRange": 0.4,
+    "maxRange": 4,
+    "severity": 2,
+    "interpretation": "TSH normal — healthy thyroid hormone balance."
+  },
+  {
+    "testId": 5,
+    "minRange": 4.01,
+    "maxRange": 10,
+    "severity": 3,
+    "interpretation": "TSH slightly high — early hypothyroidism; monitoring advised."
+  },
+  {
+    "testId": 5,
+    "minRange": 10.01,
+    "maxRange": 20,
+    "severity": 4,
+    "interpretation": "TSH high — moderate hypothyroidism; treatment may be needed."
+  },
+  {
+    "testId": 5,
+    "minRange": 20.01,
+    "maxRange": 200,
+    "severity": 5,
+    "interpretation": "TSH extremely high — severe hypothyroidism; immediate care advised."
+  },
+
+  {
+    "testId": 6,
+    "minRange": 0,
+    "maxRange": 1.49,
+    "severity": 0,
+    "interpretation": "Free T3 critically low — severe thyroid underactivity; seek evaluation."
+  },
+  {
+    "testId": 6,
+    "minRange": 1.5,
+    "maxRange": 2.19,
+    "severity": 1,
+    "interpretation": "Free T3 low — may indicate hypothyroidism or low hormone conversion."
+  },
+  {
+    "testId": 6,
+    "minRange": 2.2,
+    "maxRange": 4.2,
+    "severity": 2,
+    "interpretation": "Free T3 normal — healthy active thyroid hormone levels."
+  },
+  {
+    "testId": 6,
+    "minRange": 4.21,
+    "maxRange": 6,
+    "severity": 3,
+    "interpretation": "Free T3 high — possible hyperthyroidism; review with your doctor."
+  },
+  {
+    "testId": 6,
+    "minRange": 6.01,
+    "maxRange": 20,
+    "severity": 4,
+    "interpretation": "Free T3 very high — strong thyroid overactivity; urgent evaluation advised."
+  },
+
+  {
+    "testId": 7,
+    "minRange": 0,
+    "maxRange": 0.49,
+    "severity": 0,
+    "interpretation": "Free T4 critically low — severe hypothyroidism; immediate medical review needed."
+  },
+  {
+    "testId": 7,
+    "minRange": 0.5,
+    "maxRange": 0.89,
+    "severity": 1,
+    "interpretation": "Free T4 low — underactive thyroid suggested; discuss treatment."
+  },
+  {
+    "testId": 7,
+    "minRange": 0.9,
+    "maxRange": 1.7,
+    "severity": 2,
+    "interpretation": "Free T4 normal — healthy thyroid hormone levels."
+  },
+  {
+    "testId": 7,
+    "minRange": 1.71,
+    "maxRange": 2.5,
+    "severity": 3,
+    "interpretation": "Free T4 high — possible hyperthyroidism or medication overdose."
+  },
+  {
+    "testId": 7,
+    "minRange": 2.51,
+    "maxRange": 10,
+    "severity": 4,
+    "interpretation": "Free T4 very high — severe hyperthyroidism; urgent assessment required."
+  },
+
+  {
+    "testId": 8,
+    "minRange": 0,
+    "maxRange": 6.9,
+    "severity": 0,
+    "interpretation": "Hemoglobin critically low — severe anemia; urgent medical care needed."
+  },
+  {
+    "testId": 8,
+    "minRange": 7,
+    "maxRange": 11.9,
+    "severity": 1,
+    "interpretation": "Hemoglobin low — anemia likely; may cause fatigue and weakness."
+  },
+  {
+    "testId": 8,
+    "minRange": 12,
+    "maxRange": 16.5,
+    "severity": 2,
+    "interpretation": "Hemoglobin normal — healthy oxygen-carrying capacity."
+  },
+  {
+    "testId": 8,
+    "minRange": 16.6,
+    "maxRange": 18.5,
+    "severity": 3,
+    "interpretation": "Hemoglobin high — may occur from dehydration or increased red cell production."
+  },
+  {
+    "testId": 8,
+    "minRange": 18.6,
+    "maxRange": 25,
+    "severity": 4,
+    "interpretation": "Hemoglobin very high — possible blood disorder or chronic low oxygen; evaluation advised."
+  },
+
+  {
+    "testId": 9,
+    "minRange": 0,
+    "maxRange": 3.2,
+    "severity": 0,
+    "interpretation": "RBC critically low — severe anemia or bone marrow issue; urgent care needed."
+  },
+  {
+    "testId": 9,
+    "minRange": 3.3,
+    "maxRange": 4.1,
+    "severity": 1,
+    "interpretation": "RBC low — may indicate anemia or nutrient deficiency."
+  },
+  {
+    "testId": 9,
+    "minRange": 4.2,
+    "maxRange": 5.8,
+    "severity": 2,
+    "interpretation": "RBC normal — healthy red cell count."
+  },
+  {
+    "testId": 9,
+    "minRange": 5.9,
+    "maxRange": 6.5,
+    "severity": 3,
+    "interpretation": "RBC high — may be due to dehydration or increased red cell production."
+  },
+  {
+    "testId": 9,
+    "minRange": 6.6,
+    "maxRange": 8,
+    "severity": 4,
+    "interpretation": "RBC very high — may suggest polycythemia or chronic hypoxia; evaluation needed."
+  },
+
+  {
+    "testId": 10,
+    "minRange": 0,
+    "maxRange": 2,
+    "severity": 0,
+    "interpretation": "WBC critically low — high infection risk; immune suppression suspected."
+  },
+  {
+    "testId": 10,
+    "minRange": 2.1,
+    "maxRange": 3.9,
+    "severity": 1,
+    "interpretation": "WBC low — may indicate viral infection or bone marrow issues."
+  },
+  {
+    "testId": 10,
+    "minRange": 4,
+    "maxRange": 11,
+    "severity": 2,
+    "interpretation": "WBC normal — healthy immune function."
+  },
+  {
+    "testId": 10,
+    "minRange": 11.1,
+    "maxRange": 15,
+    "severity": 3,
+    "interpretation": "WBC high — commonly due to infection or inflammation."
+  },
+  {
+    "testId": 10,
+    "minRange": 15.1,
+    "maxRange": 50,
+    "severity": 4,
+    "interpretation": "WBC very high — severe infection or blood disorder suspected."
+  },
+
+  {
+    "testId": 11,
+    "minRange": 0,
+    "maxRange": 49000,
+    "severity": 0,
+    "interpretation": "Platelets critically low — high bleeding risk; urgent care advised."
+  },
+  {
+    "testId": 11,
+    "minRange": 50000,
+    "maxRange": 149000,
+    "severity": 1,
+    "interpretation": "Platelets low — may cause easy bruising or bleeding."
+  },
+  {
+    "testId": 11,
+    "minRange": 150000,
+    "maxRange": 450000,
+    "severity": 2,
+    "interpretation": "Platelets normal — healthy clotting function."
+  },
+  {
+    "testId": 11,
+    "minRange": 450001,
+    "maxRange": 600000,
+    "severity": 3,
+    "interpretation": "Platelets high — may occur with inflammation or reactive conditions."
+  },
+  {
+    "testId": 11,
+    "minRange": 600001,
+    "maxRange": 1000000,
+    "severity": 4,
+    "interpretation": "Platelets very high — possible bone marrow disorder; evaluation needed."
+  },
+
+  {
+    "testId": 12,
+    "minRange": 0,
+    "maxRange": 65,
+    "severity": 0,
+    "interpretation": "MCV critically low — severe iron deficiency or microcytic anemia."
+  },
+  {
+    "testId": 12,
+    "minRange": 66,
+    "maxRange": 79,
+    "severity": 1,
+    "interpretation": "MCV low — common in iron deficiency or thalassemia."
+  },
+  {
+    "testId": 12,
+    "minRange": 80,
+    "maxRange": 100,
+    "severity": 2,
+    "interpretation": "MCV normal — normal red cell size."
+  },
+  {
+    "testId": 12,
+    "minRange": 101,
+    "maxRange": 110,
+    "severity": 3,
+    "interpretation": "MCV high — often due to B12 or folate deficiency."
+  },
+  {
+    "testId": 12,
+    "minRange": 111,
+    "maxRange": 140,
+    "severity": 4,
+    "interpretation": "MCV very high — significant macrocytosis; possible marrow disorder."
+  },
+
+  {
+    "testId": 13,
+    "minRange": 0,
+    "maxRange": 22,
+    "severity": 0,
+    "interpretation": "MCH critically low — severe hypochromic anemia."
+  },
+  {
+    "testId": 13,
+    "minRange": 23,
+    "maxRange": 26,
+    "severity": 1,
+    "interpretation": "MCH low — common in iron deficiency."
+  },
+  {
+    "testId": 13,
+    "minRange": 27,
+    "maxRange": 33,
+    "severity": 2,
+    "interpretation": "MCH normal — healthy hemoglobin content per red cell."
+  },
+  {
+    "testId": 13,
+    "minRange": 34,
+    "maxRange": 38,
+    "severity": 3,
+    "interpretation": "MCH high — often linked to macrocytic anemia."
+  },
+  {
+    "testId": 13,
+    "minRange": 39,
+    "maxRange": 50,
+    "severity": 4,
+    "interpretation": "MCH very high — abnormal RBC morphology suspected."
+  },
+
+  {
+    "testId": 14,
+    "minRange": 0,
+    "maxRange": 28,
+    "severity": 0,
+    "interpretation": "MCHC critically low — severe iron deficiency or hypochromia."
+  },
+  {
+    "testId": 14,
+    "minRange": 29,
+    "maxRange": 31,
+    "severity": 1,
+    "interpretation": "MCHC low — slightly low hemoglobin concentration."
+  },
+  {
+    "testId": 14,
+    "minRange": 32,
+    "maxRange": 36,
+    "severity": 2,
+    "interpretation": "MCHC normal — healthy hemoglobin concentration."
+  },
+  {
+    "testId": 14,
+    "minRange": 37,
+    "maxRange": 38,
+    "severity": 3,
+    "interpretation": "MCHC high — may occur in spherocytosis or dehydration."
+  },
+  {
+    "testId": 14,
+    "minRange": 39,
+    "maxRange": 50,
+    "severity": 4,
+    "interpretation": "MCHC very high — possible RBC membrane disorders."
+  },
+
+  {
+    "testId": 15,
+    "minRange": 0,
+    "maxRange": 10,
+    "severity": 0,
+    "interpretation": "RDW low — red blood cells are unusually uniform."
+  },
+  {
+    "testId": 15,
+    "minRange": 11,
+    "maxRange": 14.5,
+    "severity": 1,
+    "interpretation": "RDW normal — consistent RBC size distribution."
+  },
+  {
+    "testId": 15,
+    "minRange": 14.6,
+    "maxRange": 20,
+    "severity": 2,
+    "interpretation": "RDW high — often seen in iron deficiency or mixed anemia."
+  },
+  {
+    "testId": 15,
+    "minRange": 20.1,
+    "maxRange": 30,
+    "severity": 3,
+    "interpretation": "RDW very high — large variation in RBC size; further evaluation needed."
+  },
+
+  {
+    "testId": 16,
+    "minRange": 0,
+    "maxRange": 29,
+    "severity": 0,
+    "interpretation": "Neutrophils very low — severe infection risk."
+  },
+  {
+    "testId": 16,
+    "minRange": 30,
+    "maxRange": 39,
+    "severity": 1,
+    "interpretation": "Neutrophils low — may be due to viral infection or marrow suppression."
+  },
+  {
+    "testId": 16,
+    "minRange": 40,
+    "maxRange": 75,
+    "severity": 2,
+    "interpretation": "Neutrophils normal — healthy immune response."
+  },
+  {
+    "testId": 16,
+    "minRange": 76,
+    "maxRange": 85,
+    "severity": 3,
+    "interpretation": "Neutrophils high — suggests bacterial infection or inflammation."
+  },
+  {
+    "testId": 16,
+    "minRange": 86,
+    "maxRange": 100,
+    "severity": 4,
+    "interpretation": "Neutrophils very high — severe infection or stress response."
+  },
+
+  {
+    "testId": 17,
+    "minRange": 0,
+    "maxRange": 9,
+    "severity": 0,
+    "interpretation": "Lymphocytes very low — high infection susceptibility."
+  },
+  {
+    "testId": 17,
+    "minRange": 10,
+    "maxRange": 19,
+    "severity": 1,
+    "interpretation": "Lymphocytes low — may occur during acute infection or stress."
+  },
+  {
+    "testId": 17,
+    "minRange": 20,
+    "maxRange": 40,
+    "severity": 2,
+    "interpretation": "Lymphocytes normal — healthy immune function."
+  },
+  {
+    "testId": 17,
+    "minRange": 41,
+    "maxRange": 55,
+    "severity": 3,
+    "interpretation": "Lymphocytes high — may indicate viral infection or inflammation."
+  },
+  {
+    "testId": 17,
+    "minRange": 56,
+    "maxRange": 90,
+    "severity": 4,
+    "interpretation": "Lymphocytes very high — may suggest lymphoproliferative disorders."
+  }
+]

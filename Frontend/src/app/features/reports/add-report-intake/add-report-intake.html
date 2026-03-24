@@ -1,0 +1,111 @@
+<div class="wizard-container">
+  <!-- Stepper Header -->
+  <header class="wizard-header">
+    <div class="stepper">
+      <div class="step" [class.active]="currentStep >= 1" [class.completed]="currentStep > 1">
+        <span class="step-num">1</span>
+        <span class="step-label">Vitals</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" [class.active]="currentStep >= 2" [class.completed]="currentStep > 2">
+        <span class="step-num">2</span>
+        <span class="step-label">Panel</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <span class="step-label">Results</span>
+      </div>
+    </div>
+    <button class="btn-close" (click)="cancel()">✕</button>
+  </header>
+
+  <!-- STEP 1: PATIENT VITALS -->
+  <div class="step-content" *ngIf="currentStep === 1">
+    <div class="intro">
+      <h2>Step 1: Patient Physical Vitals</h2>
+      <p>Enter the patient's current measurements to begin the diagnostic process.</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="goToStep2()" class="vitals-form">
+      <div class="vitals-grid">
+        <div class="input-group">
+          <label>Height (cm)</label>
+          <div class="input-wrapper">
+            <span class="icon">📏</span>
+            <input type="number" formControlName="heightCm" placeholder="e.g. 175" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Weight (kg)</label>
+          <div class="input-wrapper">
+            <span class="icon">⚖️</span>
+            <input type="number" formControlName="weightKg" placeholder="e.g. 72" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Systolic BP</label>
+          <div class="input-wrapper">
+            <span class="icon">💓</span>
+            <input type="number" formControlName="systolic" placeholder="e.g. 120" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Diastolic BP</label>
+          <div class="input-wrapper">
+            <span class="icon">💧</span>
+            <input type="number" formControlName="diastolic" placeholder="e.g. 80" />
+          </div>
+        </div>
+      </div>
+
+      <div class="wizard-actions">
+        <button type="button" class="btn-secondary" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn-primary" [disabled]="form.invalid">Next: Choose Panel →</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- STEP 2: PANEL SELECTION -->
+  <div class="step-content" *ngIf="currentStep === 2">
+    <div class="intro">
+      <h2>Step 2: Choose Laboratory Panel</h2>
+      <p>Select the specific diagnostic panel for this report.</p>
+    </div>
+
+    <!-- Panel Grid -->
+    <div class="panels-grid" *ngIf="!isLoadingPanels; else loadingPanels">
+      <div *ngFor="let panel of panels" class="panel-option" [class.selected]="selectedPanelId === panel.panelId"
+        (click)="selectPanel(panel.panelId)">
+
+        <div class="panel-icon">🧪</div>
+        <div class="panel-info">
+          <span class="panel-name">{{ panel.panelName }}</span>
+          <span class="panel-meta">{{ panel.testCount }} Tests • {{ panel.panelCode }}</span>
+        </div>
+        <div class="selection-check">✓</div>
+      </div>
+
+      <div class="no-panels" *ngIf="panels.length === 0">
+        <p>No panels found. Please sync your backend data.</p>
+      </div>
+    </div>
+
+    <ng-template #loadingPanels>
+      <div class="panels-loader">
+        <div class="dot-spinner"></div>
+        <p>Finding available panels...</p>
+      </div>
+    </ng-template>
+
+    <div class="wizard-actions">
+      <button type="button" class="btn-secondary" (click)="goToStep1()">← Back to Vitals</button>
+      <button type="button" class="btn-primary" [disabled]="!selectedPanelId" (click)="next()">
+        Continue to Results →
+      </button>
+    </div>
+  </div>
+</div>

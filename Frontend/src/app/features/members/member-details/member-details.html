@@ -1,0 +1,117 @@
+<!-- VERSION 2.1 PREMIUM UI -->
+<div class="page-container" *ngIf="member || isLoading">
+
+  <!-- Full page loader only shows on initial load -->
+  <div *ngIf="isLoading" class="full-page-loader">
+    <div class="spinner"></div>
+    <p>Loading Member...</p>
+  </div>
+
+  <div *ngIf="member && !isLoading">
+    <!-- Breadcrumb and Action -->
+    <header class="page-header">
+      <nav class="breadcrumb">
+        <span class="crumb" (click)="goBack()">Members</span>
+        <span class="separator">/</span>
+        <span class="active">{{ member.name }}</span>
+      </nav>
+      <button class="btn btn-primary" (click)="addReport(member)">+ New Report</button>
+    </header>
+
+    <div class="content-grid">
+      <!-- Member Side Card -->
+      <aside class="member-sidebar">
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="avatar-container">
+              <div class="avatar-circle">{{ getAvatarInitial(member.name) }}</div>
+            </div>
+            <button class="btn-edit-member" (click)="goToEdit()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+              </svg>
+              <span>Edit Member</span>
+            </button>
+          </div>
+
+          <div class="profile-title">
+            <h3>{{ member.name }}</h3>
+            <span class="member-id">Member ID: {{ member.memberId }}</span>
+          </div>
+
+          <div class="detail-list">
+            <div class="detail-row">
+              <span class="label">Gender</span>
+              <span class="value">{{ member.gender }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Age</span>
+              <span class="value">{{ calculateAge(member.dateOfBirth) }} yrs</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Blood Group</span>
+              <span class="value">{{ member.bloodGroup || 'O+' }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Phone</span>
+              <span class="value">{{ member.contact }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="label">Address</span>
+              <span class="value">{{ member.address || '123 Main St, New York' }}</span>
+            </div>
+          </div>
+
+
+        </div>
+      </aside>
+
+      <!-- Reports Table Card -->
+      <main class="reports-main">
+        <div class="reports-card">
+          <div class="card-header">
+            <h3>Lab Reports History</h3>
+          </div>
+          <div class="table-container">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>PANEL</th>
+                  <th>VITALS</th>
+                  <th>STATUS</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let visit of visits">
+                  <td class="semi-bold">{{ visit.visitDateTime | date:'MMM dd, yyyy' }}</td>
+                  <td>{{ visit.panelName || 'Thyroid Panel' }}</td>
+                  <td class="vitals-cell">{{ getVitalsSummary(visit) }}</td>
+                  <td>
+                    <span class="status-badge" [ngClass]="visit.status?.toLowerCase() || 'submitted'">
+                      {{ visit.status || 'Submitted' }}
+                    </span>
+                  </td>
+
+                  <td class="actions-cell">
+                    <a class="action-link view" (click)="openReport(visit.visitId)">View Report</a>
+
+                  </td>
+                </tr>
+                <tr *ngIf="visits.length === 0">
+                  <td colspan="5" class="no-data">
+                    <div class="empty-state">
+                      <p>No reports available yet.</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

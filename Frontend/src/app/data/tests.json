@@ -1,0 +1,21 @@
+[
+  { "testId": 1, "testName": "HbA1c", "unit": "%" },
+  { "testId": 2, "testName": "FBS", "unit": "mg/dl" },
+  { "testId": 3, "testName": "PPBS", "unit": "mg/dl" },
+  { "testId": 4, "testName": "Mean Blood Glucose Level", "unit": "mg/dl" },
+
+  { "testId": 5, "testName": "TSH", "unit": "uIU/mL" },
+  { "testId": 6, "testName": "Free T3", "unit": "pg/ml" },
+  { "testId": 7, "testName": "Free T4", "unit": "ng/dl" },
+
+  { "testId": 8, "testName": "Hemoglobin", "unit": "g/dl" },
+  { "testId": 9, "testName": "RBC Count", "unit": "million/µL" },
+  { "testId": 10, "testName": "WBC Count", "unit": "cells/µL" },
+  { "testId": 11, "testName": "Platelet Count", "unit": "cells/µL" },
+  { "testId": 12, "testName": "MCV", "unit": "fL" },
+  { "testId": 13, "testName": "MCH", "unit": "pg/ml" },
+  { "testId": 14, "testName": "MCHC", "unit": "g/dl" },
+  { "testId": 15, "testName": "RDW-CV", "unit": "%" },
+  { "testId": 16, "testName": "Neutrophils", "unit": "%" },
+  { "testId": 17, "testName": "Lymphocytes", "unit": "%" }
+]
