@@ -8,30 +8,34 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// ✅ PostgreSQL instead of SQLite
 builder.Services.AddDbContext<MedlabAinsightDbContext>(options =>
 {
     var cs = builder.Configuration.GetConnectionString("Default");
-    options.UseSqlite(cs, x => x.MigrationsAssembly("MedLabAInsights.Data"));
+    options.UseNpgsql(cs, x => x.MigrationsAssembly("MedLabAInsights.Data"));
 });
-
 
 var app = builder.Build();
 
+// Swagger (optional but fine)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-if (app.Environment.IsDevelopment())
-{
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<MedlabAinsightDbContext>();
 
+// ✅ Always run migrations (important for Render)
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<MedlabAinsightDbContext>();
     await db.Database.MigrateAsync();
     await Seeder.SeedAsync(db);
 }
 
 app.UseHttpsRedirection();
 app.MapControllers();
-app.Urls.Add("http://0.0.0.0:10000");
+
+// ✅ CRITICAL for Render
+app.Urls.Add("http://0.0.0.0:8080");
+
 app.Run();
