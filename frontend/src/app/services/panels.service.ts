@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface BackendPanel {
   panelId: number;
@@ -13,7 +14,7 @@ export interface BackendPanel {
   providedIn: 'root',
 })
 export class PanelsService {
-  private baseUrl = '/api/panels';
+  private baseUrl = `${environment.apiUrl}/panels`;
 
   constructor(private http: HttpClient) { }
 
@@ -21,13 +22,13 @@ export class PanelsService {
     return this.http.get<BackendPanel[]>(this.baseUrl);
   }
   getTestsByPanel(panelId: number) {
-    return this.http.get<any[]>(`/api/panels/${panelId}/tests`);
+    return this.http.get<any[]>(`${environment.apiUrl}/panels/${panelId}/tests`);
   }
   getAllTests() {
-    return this.http.get<any[]>('/api/tests');
+    return this.http.get<any[]>(`${environment.apiUrl}/tests`);
   }
   createVisit(memberId: number, payload: any) {
-    return this.http.post(`/api/members/${memberId}/visits`, payload, {
+    return this.http.post(`${environment.apiUrl}/members/${memberId}/visits`, payload, {
       responseType: 'text',
     });
   }
@@ -36,23 +37,23 @@ export class PanelsService {
   }
 
   getVisitReport(visitId: number) {
-    return this.http.get<any>(`/api/visits/${visitId}/report`);
+    return this.http.get<any>(`${environment.apiUrl}/visits/${visitId}/report`);
   }
 
   evaluateVisit(visitId: number) {
     // Changing from null to {} as some .NET backends require an object to avoid 400 errors
-    return this.http.post<any>(`/api/visits/${visitId}/evaluate`, {});
+    return this.http.post<any>(`${environment.apiUrl}/visits/${visitId}/evaluate`, {});
   }
 
 
 
   finalizeVisit(visitId: number, body: { panelRevisedSummary: string; testRevisions: { testId: number; revisedReport: string }[] }) {
-    return this.http.post(`/api/visits/${visitId}/finalize`, body);
+    return this.http.post(`${environment.apiUrl}/visits/${visitId}/finalize`, body);
   }
 
   deleteVisit(memberId: number, visitId: number) {
     // Correcting to a more likely member-scoped route for this backend
-    return this.http.delete(`/api/members/${memberId}/visits/${visitId}`);
+    return this.http.delete(`${environment.apiUrl}/members/${memberId}/visits/${visitId}`);
   }
 }
 

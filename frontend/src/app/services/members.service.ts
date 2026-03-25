@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Member } from '../models/member.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MembersService {
-  private apiUrl = '/api/members';
+  private apiUrl = `${environment.apiUrl}/members`;
 
   private currentMember: Member | null = null;
   private currentReportDraft: any = null;
