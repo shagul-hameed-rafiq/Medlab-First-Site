@@ -1,4 +1,4 @@
-﻿using MedLabAInsights.Data.Contexts;
+using MedLabAInsights.Data.Contexts;
 using MedLabAInsights.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,10 +24,10 @@ namespace MedLabAInsights.Data.Seeding
                 new() { TestName = "WBC Count", TestCode = "CBC_WBC", MinValue = 4000, MaxValue = 11000, Unit = "cells/µL" },
                 new() { TestName = "Platelet Count", TestCode = "CBC_PLT", MinValue = 150000, MaxValue = 450000, Unit = "cells/µL" },
 
-                new() { TestName = "MVC", TestCode = "CBC_MCV", MinValue = 80, MaxValue = 100, Unit = "fL" },
+                new() { TestName = "MCV", TestCode = "CBC_MCV", MinValue = 80, MaxValue = 100, Unit = "fL" },
                 new() { TestName = "MCH", TestCode = "CBC_MCH", MinValue = 27, MaxValue = 33, Unit = "pg/ml" },
                 new() { TestName = "MCHC", TestCode = "CBC_MCHC", MinValue = 32, MaxValue = 36, Unit = "g/dl" },
-                new() { TestName = "RWD-CV", TestCode = "CBC_RDW", MinValue = 11.5, MaxValue = 15.0, Unit = "%" },
+                new() { TestName = "RDW-CV", TestCode = "CBC_RDW", MinValue = 11.5, MaxValue = 15.0, Unit = "%" },
 
                 new() { TestName = "Neutrophils", TestCode = "CBC_NEU", MinValue = 40, MaxValue = 70, Unit = "%" },
                 new() { TestName = "Lymphocytes", TestCode = "CBC_LYM", MinValue = 20, MaxValue = 40, Unit = "%" }
